@@ -14,7 +14,7 @@ const CalculationInputs: FC<CalculationInputsProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col gap-4 p-6 h-4/6">
+    <div className="flex flex-col gap-4 p-6 w-full">
       <InputField
         value={loan}
         setValue={setLoan}
