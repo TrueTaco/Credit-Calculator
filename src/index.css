@@ -18,3 +18,13 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+input[type="range"]::-webkit-slider-thumb {
+  @apply w-4 h-4 bg-[#CBCBCB] rounded-full shadow-md appearance-none;
+}
+input[type="range"]::-moz-range-thumb {
+  @apply w-5 h-5 bg-[#CBCBCB] rounded-full shadow-md appearance-none;
+}
+input[type="range"]::-ms-thumb {
+  @apply w-5 h-5 bg-[#CBCBCB] rounded-full shadow-md appearance-none;
+}

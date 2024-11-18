@@ -7,7 +7,7 @@ interface ContentProps {}
 const Content: FC<ContentProps> = () => {
   return (
     <div className="h-full">
-      <div className="h-full ">
+      <div className="h-full flex-col">
         <CalculationInputs />
         <BasicResult />
       </div>

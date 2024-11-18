@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import InputField from "./InputField";
 import { useTranslation } from "react-i18next";
+import Slider from "./Slider";
 
 interface CalculationInputsProps {}
 
@@ -8,15 +9,12 @@ const CalculationInputs: FC<CalculationInputsProps> = () => {
   const [loan, setLoan] = useState<number>();
   const [interestRate, setInterestRate] = useState<number>();
   const [repayment, setRepayment] = useState<number>();
+  const [interestRateFixation, setInterestRateFixation] = useState<number>(50);
 
   const { t } = useTranslation();
 
-  useEffect(() => {
-    console.log(loan);
-  }, [loan]);
-
   return (
-    <div className="flex flex-col h-3/6 gap-4 p-6">
+    <div className="flex flex-col gap-4 p-6 h-4/6">
       <InputField
         value={loan}
         setValue={setLoan}
@@ -37,6 +35,11 @@ const CalculationInputs: FC<CalculationInputsProps> = () => {
           placeholder={"5%"}
         />
       </div>
+      <Slider
+        value={interestRateFixation}
+        setValue={setInterestRateFixation}
+        label="Zinsbindung"
+      />
     </div>
   );
 };
