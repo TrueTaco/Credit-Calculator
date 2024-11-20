@@ -3,14 +3,28 @@ import InputField from "./InputField";
 import { useTranslation } from "react-i18next";
 import Slider from "./Slider";
 
-interface CalculationInputsProps {}
+interface CalculationInputsProps {
+  loan: number;
+  setLoan: React.Dispatch<React.SetStateAction<number>>;
+  interestRate: number;
+  setInterestRate: React.Dispatch<React.SetStateAction<number>>;
+  repayment: number;
+  setRepayment: React.Dispatch<React.SetStateAction<number>>;
+  interestRateFixation: number;
+  setInterestRateFixation: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const CalculationInputs: FC<CalculationInputsProps> = () => {
-  const [loan, setLoan] = useState<number>();
-  const [interestRate, setInterestRate] = useState<number>();
-  const [repayment, setRepayment] = useState<number>();
-  const [interestRateFixation, setInterestRateFixation] = useState<number>(50);
-
+const CalculationInputs: FC<CalculationInputsProps> = ({
+  loan,
+  setLoan,
+  interestRate,
+  setInterestRate,
+  repayment,
+  setRepayment,
+  interestRateFixation,
+  setInterestRateFixation,
+}) => {
+  // Translation
   const { t } = useTranslation();
 
   return (
@@ -25,20 +39,20 @@ const CalculationInputs: FC<CalculationInputsProps> = () => {
         <InputField
           value={interestRate}
           setValue={setInterestRate}
-          label={"Zinssatz"}
+          label={t("interestRate")}
           placeholder={"4%"}
         />
         <InputField
           value={repayment}
           setValue={setRepayment}
-          label={"Tilgung"}
+          label={t("repayment")}
           placeholder={"5%"}
         />
       </div>
       <Slider
         value={interestRateFixation}
         setValue={setInterestRateFixation}
-        label="Zinsbindung"
+        label={t("interestRateFixation")}
       />
     </div>
   );
