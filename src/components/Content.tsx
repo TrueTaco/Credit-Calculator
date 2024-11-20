@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import CalculationInputs from "./CalculationInputs";
 import BasicResult from "./BasicResult";
+import TabSwitcher from "./TabSwitcher";
 
 interface ContentProps {}
 
@@ -18,7 +19,7 @@ const Content: FC<ContentProps> = () => {
 
   return (
     <div className="h-full">
-      <div className="h-full flex flex-col justify-start items-center gap-4">
+      <div className="h-full flex flex-col justify-start items-center gap-8 pl-4 pr-4">
         <CalculationInputs
           loan={loan}
           setLoan={setLoan}
@@ -36,6 +37,7 @@ const Content: FC<ContentProps> = () => {
           interestCharge={interestCharges}
           duration={duration}
         />
+        <TabSwitcher />
       </div>
     </div>
   );
