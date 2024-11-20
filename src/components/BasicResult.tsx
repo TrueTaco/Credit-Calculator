@@ -17,7 +17,7 @@ const BasicResult: FC<BasicResultProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="h-2/6 w-full grid grid-cols-2 p-4">
+    <div className="h-2/6 w-full grid grid-cols-2">
       <div>
         <p className=" text-white text-lg font-thin pl-3 pb-1 opacity-80">
           {t("fullLoan")}
