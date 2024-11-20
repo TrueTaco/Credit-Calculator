@@ -18,6 +18,8 @@ i18next.use(initReactI18next).init({
         interestRateFixation: "Interest rate fixation",
         years: "years",
         calculation: "Calculation",
+        table: "Table",
+        statistic: "Statistic",
       },
     },
     de: {
@@ -32,6 +34,8 @@ i18next.use(initReactI18next).init({
         interestRateFixation: "Zinsbindung",
         years: "Jahre",
         calculation: "Berechnung",
+        table: "Tabelle",
+        statistic: "Statistik",
       },
     },
   },

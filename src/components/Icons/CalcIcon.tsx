@@ -1,12 +1,16 @@
 import React, { FC } from "react";
 
+interface CalcIconProps {
+  color: "white" | "black";
+}
+
 /**
  * CalcIcon Component
  *
  * A functional React component that renders a calculator icon as an SVG.
  * This component is lightweight, reusable, and follows best practices for maintainability.
  */
-const CalcIcon: FC = () => {
+const CalcIcon: FC<CalcIconProps> = ({ color }) => {
   /**
    * SVG element attributes
    *
@@ -31,7 +35,7 @@ const CalcIcon: FC = () => {
 
   return (
     <svg {...svgAttributes}>
-      <path d={pathData} fill="black" />
+      <path d={pathData} fill={color} />
     </svg>
   );
 };

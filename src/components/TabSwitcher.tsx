@@ -5,7 +5,12 @@ import StatisticsIcon from "./Icons/StatisticsIcon";
 import TableIcon from "./Icons/TableIcon";
 import GlowWrapper from "./GlowWrapper";
 
-interface TabSwitcherProps {}
+interface TabSwitcherProps {
+  selectedTab: "calculation" | "statistic" | "table";
+  setSelectedTab: React.Dispatch<
+    React.SetStateAction<"calculation" | "statistic" | "table">
+  >;
+}
 
 /**
  * TabSwitcher Component
@@ -22,33 +27,71 @@ interface TabSwitcherProps {}
  * - Uses the `i18next` library for text localization.
  * - Implements a glow effect for each icon using the `GlowWrapper` component.
  */
-const TabSwitcher: FC<TabSwitcherProps> = ({}) => {
+const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
   // Translation
   const { t } = useTranslation();
 
   return (
-    <div className=" bg-white/5 rounded-full h-20 w-full flex justify-between items-center gap-4 p-2 pr-4 relative">
+    <div className=" bg-white/5 rounded-full h-20 w-full flex justify-between items-center  p-2 pr-4 pl-4 relative">
       {/* Calculation Icon Section */}
-      <div className="bg-white rounded-full h-full flex justify-center items-center gap-6 pr-12 pl-6 relative">
-        <GlowWrapper>
-          <CalcIcon />
-          <p className="font-semibold"> {t("calculation")}</p>
-        </GlowWrapper>
-      </div>
+      {selectedTab === "calculation" ? (
+        <div className="bg-white rounded-full h-full flex justify-evenly items-center gap-6 pr-12 pl-6 relative w-4/6">
+          <GlowWrapper>
+            <CalcIcon color="black" />
+            <p className="font-semibold"> {t("calculation")}</p>
+          </GlowWrapper>
+        </div>
+      ) : (
+        /* Relative-attribute needed for glow effect  */
+        <div
+          className="relative h-full flex items-center p-2"
+          onClick={() => setSelectedTab("calculation")}
+        >
+          <GlowWrapper strength={10}>
+            <CalcIcon color="white" />
+          </GlowWrapper>
+        </div>
+      )}
 
-      {/* Statistics Icon Section - extra div with relative-attribute needed for glow effect */}
-      <div className="relative">
-        <GlowWrapper strength={80}>
-          <StatisticsIcon />
-        </GlowWrapper>
-      </div>
+      {/* Statistics Icon Section */}
+      {selectedTab === "statistic" ? (
+        <div className="bg-white rounded-full h-full flex justify-around items-center gap-6 pr-16 pl-6 relative w-4/6">
+          <GlowWrapper>
+            <StatisticsIcon color="black" />
+            <p className="font-semibold"> {t("statistic")}</p>
+          </GlowWrapper>
+        </div>
+      ) : (
+        /* Relative-attribute needed for glow effect  */
+        <div
+          className="relative h-full flex items-center p-2"
+          onClick={() => setSelectedTab("statistic")}
+        >
+          <GlowWrapper strength={30}>
+            <StatisticsIcon color="white" />
+          </GlowWrapper>
+        </div>
+      )}
 
-      {/* Statistics Icon Section - extra div with relative-attribute needed for glow effect */}
-      <div className="relative">
-        <GlowWrapper strength={80}>
-          <TableIcon />
-        </GlowWrapper>
-      </div>
+      {/* Statistics Icon Section */}
+      {selectedTab === "table" ? (
+        <div className="bg-white rounded-full h-full flex justify-around items-center gap-6 pr-16 pl-4 relative w-4/6">
+          <GlowWrapper>
+            <TableIcon color="black" />
+            <p className="font-semibold"> {t("table")}</p>
+          </GlowWrapper>
+        </div>
+      ) : (
+        /* Relative-attribute needed for glow effect  */
+        <div
+          className="relative h-full flex items-center p-2"
+          onClick={() => setSelectedTab("table")}
+        >
+          <GlowWrapper strength={20}>
+            <TableIcon color="white" />
+          </GlowWrapper>
+        </div>
+      )}
     </div>
   );
 };

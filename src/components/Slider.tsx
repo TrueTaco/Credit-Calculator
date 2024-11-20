@@ -42,7 +42,7 @@ const Slider: FC<SliderProps> = ({ label, value, setValue }) => {
             background: "rgba(72, 209, 217, 0.5)", // Glow-Farbe
             filter: "blur(24px)", // Blur für den Glow
           }}
-        ></div>
+        />
         {/* Slider */}
         <input
           id="custom-slider"

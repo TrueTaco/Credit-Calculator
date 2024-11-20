@@ -17,6 +17,11 @@ const Content: FC<ContentProps> = () => {
   const [interestCharges, setInterestCharges] = useState<number>(17863.42);
   const [duration, setDuration] = useState<number>(17);
 
+  // Navigation
+  const [selectedTab, setSelectedTab] = useState<
+    "calculation" | "statistic" | "table"
+  >("calculation");
+
   return (
     <div className="h-full">
       <div className="h-full flex flex-col justify-start items-center gap-8 pl-4 pr-4">
@@ -37,7 +42,10 @@ const Content: FC<ContentProps> = () => {
           interestCharge={interestCharges}
           duration={duration}
         />
-        <TabSwitcher />
+        <TabSwitcher
+          selectedTab={selectedTab}
+          setSelectedTab={setSelectedTab}
+        />
       </div>
     </div>
   );
