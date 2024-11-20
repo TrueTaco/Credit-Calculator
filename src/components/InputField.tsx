@@ -18,10 +18,10 @@ const InputField: FC<InputFieldProps> = ({
       <label className=" text-white text-lg font-thin pl-3 pb-1">{label}</label>
       <input
         type="number"
-        className="hover:ring-blue-500 indent-4 text-white bg-white/10 rounded-full border border-white/5 h-12"
+        className="hover:ring-blue-500 indent-4 text-white bg-white/5 rounded-full border border-white/5 h-12"
         style={{
           background:
-            "radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.10) 100%)",
+            "radial-gradient(ellipse, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)",
         }}
         placeholder={placeholder}
         value={value}
