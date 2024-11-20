@@ -47,7 +47,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
           className="relative h-full flex items-center p-2"
           onClick={() => setSelectedTab("calculation")}
         >
-          <GlowWrapper strength={10}>
+          <GlowWrapper strength={20}>
             <CalcIcon color="white" />
           </GlowWrapper>
         </div>
@@ -67,7 +67,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
           className="relative h-full flex items-center p-2"
           onClick={() => setSelectedTab("statistic")}
         >
-          <GlowWrapper strength={30}>
+          <GlowWrapper strength={20}>
             <StatisticsIcon color="white" />
           </GlowWrapper>
         </div>
