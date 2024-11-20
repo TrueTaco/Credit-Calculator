@@ -17,6 +17,7 @@ i18next.use(initReactI18next).init({
         repayment: "Repayment",
         interestRateFixation: "Interest rate fixation",
         years: "years",
+        calculation: "Calculation",
       },
     },
     de: {
@@ -30,6 +31,7 @@ i18next.use(initReactI18next).init({
         repayment: "Tilgung",
         interestRateFixation: "Zinsbindung",
         years: "Jahre",
+        calculation: "Berechnung",
       },
     },
   },
