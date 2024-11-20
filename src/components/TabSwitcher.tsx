@@ -3,7 +3,7 @@ import CalcIcon from "./Icons/CalcIcon";
 import { useTranslation } from "react-i18next";
 import StatisticsIcon from "./Icons/StatisticsIcon";
 import TableIcon from "./Icons/TableIcon";
-import GlowWrapper from "./GlowWrapper";
+import GlowWrapper from "./Generics/GlowWrapper";
 
 interface TabSwitcherProps {
   selectedTab: "calculation" | "statistic" | "table";

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
-import CalculationInputs from "./CalculationInputs";
-import BasicResult from "./BasicResult";
+import CalculationInputs from "./View/Calculation/CalculationInputs";
+import BasicResult from "./View/Calculation/BasicResult";
 import TabSwitcher from "./TabSwitcher";
 
 interface ContentProps {}
