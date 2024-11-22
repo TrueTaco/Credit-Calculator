@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import CalcIcon from "./Icons/CalcIcon";
 import { useTranslation } from "react-i18next";
 import StatisticsIcon from "./Icons/StatisticsIcon";

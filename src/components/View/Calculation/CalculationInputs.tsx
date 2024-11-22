@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import InputField from "./InputField";
 import { useTranslation } from "react-i18next";
 import Slider from "./Slider";

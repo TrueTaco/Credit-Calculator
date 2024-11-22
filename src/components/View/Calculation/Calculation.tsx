@@ -30,9 +30,6 @@ const Calculation: FC<CalculationProps> = ({
   interestCharges,
   duration,
 }) => {
-  // Translation
-  const { t } = useTranslation();
-
   return (
     <div className="flex flex-col justify-start items-center gap-8 pl-2 pr-2 pb-4">
       <CalculationInputs

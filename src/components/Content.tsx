@@ -1,6 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
-import CalculationInputs from "./View/Calculation/CalculationInputs";
-import BasicResult from "./View/Calculation/BasicResult";
+import { FC, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
 
