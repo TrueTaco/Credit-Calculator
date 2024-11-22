@@ -4,7 +4,7 @@ interface InputFieldProps {
   label: string;
   placeholder: string;
   value: number | undefined;
-  setValue: React.Dispatch<React.SetStateAction<number | undefined>>;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const InputField: FC<InputFieldProps> = ({

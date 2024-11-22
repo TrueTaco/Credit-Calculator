@@ -3,7 +3,7 @@ import React, { ChangeEvent, FC } from "react";
 interface SliderProps {
   label: string;
   value: number | undefined;
-  setValue: React.Dispatch<React.SetStateAction<number | undefined>>;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Slider: FC<SliderProps> = ({ label, value, setValue }) => {

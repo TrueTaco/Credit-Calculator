@@ -1,7 +1,5 @@
-import React, { FC, useEffect, useState } from "react";
-import InputField from "./InputField";
+import React, { FC } from "react";
 import { useTranslation } from "react-i18next";
-import Slider from "./Slider";
 import BasicResult from "./BasicResult";
 import CalculationInputs from "./CalculationInputs";
 
