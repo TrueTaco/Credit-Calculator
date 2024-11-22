@@ -1,4 +1,4 @@
-import { FC, SetStateAction, useState } from "react";
+import { FC, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
 
