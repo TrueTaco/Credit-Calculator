@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import BasicResult from "./BasicResult";
 import CalculationInputs from "./CalculationInputs";
 
@@ -13,8 +12,11 @@ interface CalculationProps {
   interestRateFixation: number;
   setInterestRateFixation: React.Dispatch<React.SetStateAction<number>>;
   rate: number;
+  setRate: React.Dispatch<React.SetStateAction<number>>;
   interestCharges: number;
+  setInterestCharges: React.Dispatch<React.SetStateAction<number>>;
   duration: number;
+  setDuration: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const Calculation: FC<CalculationProps> = ({

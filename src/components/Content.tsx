@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, SetStateAction, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
 
@@ -38,6 +38,9 @@ const Content: FC<ContentProps> = () => {
               rate={rate}
               interestCharges={interestCharges}
               duration={duration}
+              setRate={setRate}
+              setInterestCharges={setInterestCharges}
+              setDuration={setDuration}
             />
           </>
         )}
