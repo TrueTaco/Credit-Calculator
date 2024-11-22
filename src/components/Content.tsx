@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import CalculationInputs from "./View/Calculation/CalculationInputs";
 import BasicResult from "./View/Calculation/BasicResult";
 import TabSwitcher from "./TabSwitcher";
+import Calculation from "./View/Calculation/Calculation";
 
 interface ContentProps {}
 
@@ -23,30 +24,28 @@ const Content: FC<ContentProps> = () => {
   >("calculation");
 
   return (
-    <div className="h-full">
-      <div className="h-full flex flex-col justify-start items-center gap-8 pl-4 pr-4">
-        <CalculationInputs
-          loan={loan}
-          setLoan={setLoan}
-          interestRate={interestRate}
-          setInterestRate={setInterestRate}
-          repayment={repayment}
-          setRepayment={setRepayment}
-          interestRateFixation={interestRateFixation}
-          setInterestRateFixation={setInterestRateFixation}
-        />
-        <hr className="h-[0.5px] w-5/6 bg-white opacity-20 " />
-        <BasicResult
-          loan={loan + interestCharges}
-          rate={rate}
-          interestCharge={interestCharges}
-          duration={duration}
-        />
-        <TabSwitcher
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        />
+    <div className="h-full p-2 flex flex-col justify-between">
+      <div>
+        {selectedTab === "calculation" && (
+          <>
+            <Calculation
+              loan={loan}
+              setLoan={setLoan}
+              interestRate={interestRate}
+              setInterestRate={setInterestRate}
+              repayment={repayment}
+              setRepayment={setRepayment}
+              interestRateFixation={interestRateFixation}
+              setInterestRateFixation={setInterestRateFixation}
+              rate={rate}
+              interestCharges={interestCharges}
+              duration={duration}
+            />
+          </>
+        )}
       </div>
+
+      <TabSwitcher selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
     </div>
   );
 };

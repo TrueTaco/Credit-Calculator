@@ -32,7 +32,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
   const { t } = useTranslation();
 
   return (
-    <div className=" bg-white/5 rounded-full h-20 w-full flex justify-between items-center  p-2 pr-4 pl-4 relative">
+    <div className=" bg-white/5 rounded-full h-16 w-full flex justify-between items-center p-2 relative">
       {/* Calculation Icon Section */}
       {selectedTab === "calculation" ? (
         <div className="bg-white rounded-full h-full flex justify-evenly items-center gap-6 pr-12 pl-6 relative w-4/6">
@@ -44,7 +44,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
       ) : (
         /* Relative-attribute needed for glow effect  */
         <div
-          className="relative h-full flex items-center p-2"
+          className="relative h-full flex items-center p-3"
           onClick={() => setSelectedTab("calculation")}
         >
           <GlowWrapper strength={20}>
@@ -64,7 +64,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
       ) : (
         /* Relative-attribute needed for glow effect  */
         <div
-          className="relative h-full flex items-center p-2"
+          className="relative h-full flex items-center p-3"
           onClick={() => setSelectedTab("statistic")}
         >
           <GlowWrapper strength={20}>
