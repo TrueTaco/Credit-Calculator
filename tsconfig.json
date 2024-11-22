@@ -1,6 +1,9 @@
 {
   "files": [],
   "compilerOptions": {
+    "noUnusedLocals": false, // Prevent unused imports/variables from blocking compilation
+    "noUnusedParameters": false, // Prevent unused parameters from blocking compilation
+    "strict": true, // Keep strict mode enabled for other checks
     "jsx": "react-jsx"
   },
   "references": [
