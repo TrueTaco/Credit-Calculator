@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
 
@@ -12,14 +12,70 @@ const Content: FC<ContentProps> = () => {
   const [interestRateFixation, setInterestRateFixation] = useState<number>(20);
 
   // Output values
-  const [rate, setRate] = useState<number>(582.36);
-  const [interestCharges, setInterestCharges] = useState<number>(17863.42);
-  const [duration, setDuration] = useState<number>(17);
+  const [rate, setRate] = useState<number>(0);
+  const [interestCharges, setInterestCharges] = useState<number>(0);
+  const [duration, setDuration] = useState<number>(0);
+
+  const [debtAtMonth, setDebtAtMonth] = useState<number[]>([]);
 
   // Navigation
   const [selectedTab, setSelectedTab] = useState<
     "calculation" | "statistic" | "table"
   >("calculation");
+
+  useEffect(() => {
+    calculateLoanDetails();
+  }, [loan, interestRate, repayment]);
+
+  const calculateLoanDetails = () => {
+    let monthlyInterest: number = 0.0;
+    let monthlyRepayment: number = 0.0;
+    let totalInterest: number = 0.0;
+    let remainingDebt: number = loan;
+    let monthlyRate: number = 0.0;
+
+    let month: number = 0;
+
+    // Monthly rate (Annuität) calculation
+    monthlyRate = (loan * (interestRate / 100 + repayment / 100)) / 12;
+    setRate(parseFloat(monthlyRate.toFixed(2)));
+
+    const tempDebtAtMonth: number[] = [];
+
+    while (remainingDebt > 0.0) {
+      monthlyInterest = (remainingDebt * interestRate) / 1200;
+      monthlyRepayment = monthlyRate - monthlyInterest;
+
+      if (month % 12 === 0) {
+        tempDebtAtMonth.push(remainingDebt);
+      }
+
+      remainingDebt -= monthlyRepayment;
+      totalInterest += monthlyInterest;
+
+      month++;
+
+      // Final payment adjustment
+      if (remainingDebt + (remainingDebt * interestRate) / 1200 < monthlyRate) {
+        monthlyInterest = (remainingDebt * interestRate) / 1200;
+        totalInterest += monthlyInterest;
+        remainingDebt = 0.0;
+        month++;
+      }
+
+      // Stop if interest rate fixation ends
+      if (
+        interestRateFixation !== undefined &&
+        Math.floor(month / 12) === interestRateFixation
+      ) {
+        break;
+      }
+    }
+
+    setDebtAtMonth(tempDebtAtMonth);
+    setInterestCharges(parseFloat(totalInterest.toFixed(2)));
+    setDuration(Math.ceil(month / 12));
+  };
 
   return (
     <div className="h-full p-2 flex flex-col justify-between">
