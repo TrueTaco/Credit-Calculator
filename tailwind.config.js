@@ -11,6 +11,9 @@ export default {
         satoshi: ["Satoshi", "sans-serif"],
         inter: ["Inter", "sans-serif"],
       },
+      dropShadow: {
+        glow: "0 0 8px rgba(72, 209, 217, 0.8)",
+      },
     },
   },
   plugins: [],
