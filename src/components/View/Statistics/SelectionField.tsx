@@ -37,7 +37,7 @@ const DropdownField: FC<DropdownFieldProps> = ({
       </div>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-12 bg-black bg-opacity-70">
-          {options.map((option, index) => (
+          {options.map((option) => (
             <p
               className={`cursor-pointer rounded p-2 text-white ${option === value ? "font-semibold" : ""}`}
               onClick={() => handleSelect(option)}
