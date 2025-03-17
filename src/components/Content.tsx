@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
+import Statistics from "./View/Statistics/Statistics";
 
 interface ContentProps {}
 
@@ -115,6 +116,12 @@ const Content: FC<ContentProps> = () => {
               setInterestCharges={setInterestCharges}
               setDuration={setDuration}
             />
+          </>
+        )}
+        {selectedTab === "statistic" && (
+          <>
+            {/* Calculation Component: Displays loan details and input fields */}
+            <Statistics />
           </>
         )}
       </div>
