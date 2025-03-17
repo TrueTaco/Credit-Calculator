@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import TabSwitcher from "./TabSwitcher";
 import Calculation from "./View/Calculation/Calculation";
 import Statistics from "./View/Statistics/Statistics";
+import Table from "./View/Table/Table";
 
 interface ContentProps {}
 
@@ -95,7 +96,7 @@ const Content: FC<ContentProps> = () => {
   };
 
   return (
-    <div className="h-full p-2 flex flex-col justify-between">
+    <div className="flex h-full flex-col justify-between p-2">
       <div>
         {selectedTab === "calculation" && (
           <>
@@ -122,6 +123,12 @@ const Content: FC<ContentProps> = () => {
           <>
             {/* Calculation Component: Displays loan details and input fields */}
             <Statistics />
+          </>
+        )}
+        {selectedTab === "table" && (
+          <>
+            {/* Calculation Component: Displays loan details and input fields */}
+            <Table />
           </>
         )}
       </div>

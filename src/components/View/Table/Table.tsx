@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SelectionField from "../../Generics/SelectionField";
 
-const Statistics = () => {
+const Table = () => {
   const [dataOption, setDataOption] = useState<string>("");
 
   return (
@@ -19,4 +19,4 @@ const Statistics = () => {
   );
 };
 
-export default Statistics;
+export default Table;
