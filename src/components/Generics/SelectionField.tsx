@@ -23,7 +23,7 @@ const DropdownField: FC<DropdownFieldProps> = ({
   };
 
   return (
-    <div className="relative flex min-w-0 flex-col">
+    <div className="relative flex w-full min-w-0 flex-col p-2">
       <div
         className={`flex h-12 cursor-pointer items-center justify-between ${isOpen ? "rounded-t-3xl" : "rounded-full"} border border-white/5 bg-white/5 px-4 text-white hover:ring-blue-500`}
         style={{

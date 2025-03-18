@@ -32,11 +32,11 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
   const { t } = useTranslation();
 
   return (
-    <div className=" bg-white/5 rounded-full h-16 w-full flex justify-between items-center p-2 relative">
+    <div className="relative flex h-16 w-full items-center justify-between rounded-full bg-white/5 p-2">
       {/* Calculation Icon Section */}
       {selectedTab === "calculation" ? (
-        <div className="bg-white rounded-full h-full flex justify-evenly items-center gap-6 pr-12 pl-6 relative w-4/6">
-          <GlowWrapper>
+        <div className="relative flex h-full w-4/6 items-center justify-evenly gap-6 rounded-full bg-white pl-6 pr-12">
+          <GlowWrapper strength={20}>
             <CalcIcon color="black" />
             <p className="font-semibold"> {t("calculation")}</p>
           </GlowWrapper>
@@ -44,7 +44,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
       ) : (
         /* Relative-attribute needed for glow effect  */
         <div
-          className="relative h-full flex items-center p-3"
+          className="relative flex h-full items-center p-3"
           onClick={() => setSelectedTab("calculation")}
         >
           <GlowWrapper strength={20}>
@@ -55,8 +55,8 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
 
       {/* Statistics Icon Section */}
       {selectedTab === "statistic" ? (
-        <div className="bg-white rounded-full h-full flex justify-around items-center gap-6 pr-16 pl-6 relative w-4/6">
-          <GlowWrapper>
+        <div className="relative flex h-full w-4/6 items-center justify-around gap-6 rounded-full bg-white pl-6 pr-16">
+          <GlowWrapper strength={20}>
             <StatisticsIcon color="black" />
             <p className="font-semibold"> {t("statistic")}</p>
           </GlowWrapper>
@@ -64,7 +64,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
       ) : (
         /* Relative-attribute needed for glow effect  */
         <div
-          className="relative h-full flex items-center p-3"
+          className="relative flex h-full items-center p-3"
           onClick={() => setSelectedTab("statistic")}
         >
           <GlowWrapper strength={20}>
@@ -75,8 +75,8 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
 
       {/* Statistics Icon Section */}
       {selectedTab === "table" ? (
-        <div className="bg-white rounded-full h-full flex justify-around items-center gap-6 pr-16 pl-4 relative w-4/6">
-          <GlowWrapper>
+        <div className="relative flex h-full w-4/6 items-center justify-around gap-6 rounded-full bg-white pl-4 pr-16">
+          <GlowWrapper strength={20}>
             <TableIcon color="black" />
             <p className="font-semibold"> {t("table")}</p>
           </GlowWrapper>
@@ -84,7 +84,7 @@ const TabSwitcher: FC<TabSwitcherProps> = ({ selectedTab, setSelectedTab }) => {
       ) : (
         /* Relative-attribute needed for glow effect  */
         <div
-          className="relative h-full flex items-center p-2"
+          className="relative flex h-full items-center p-2"
           onClick={() => setSelectedTab("table")}
         >
           <GlowWrapper strength={20}>

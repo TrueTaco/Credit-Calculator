@@ -1,11 +1,12 @@
 import { useState } from "react";
 import SelectionField from "../../Generics/SelectionField";
+import Dataframe from "./Dataframe";
 
 const Table = () => {
   const [dataOption, setDataOption] = useState<string>("");
 
   return (
-    <div className="">
+    <div className="flex w-full flex-col items-center">
       <SelectionField
         options={[
           "Mtl. Tilugung und Zinsen",
@@ -15,6 +16,7 @@ const Table = () => {
         value={dataOption}
         setValue={setDataOption}
       />
+      <Dataframe />
     </div>
   );
 };
